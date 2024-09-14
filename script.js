@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     
 
-    const MAX_KEYS_PER_GAME_PER_DAY = 120;
+    const MAX_KEYS_PER_GAME_PER_DAY = 50;
 
     //const EVENTS_DELAY = 20000;
 
@@ -171,6 +171,20 @@ document.addEventListener('DOMContentLoaded', () => {
             attemptsNumber: 30,
 
 	},
+
+	12:{
+
+	    name: 'Hide Ball',
+
+            appToken: '4bf4966c-4d22-439b-8ff2-dc5ebca1a600',
+
+            promoId: '4bf4966c-4d22-439b-8ff2-dc5ebca1a600',
+
+            eventsDelay: 40000,
+
+            attemptsNumber: 30,
+
+	}
 
 	    
 
@@ -806,26 +820,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         generatedCodesList.innerHTML = ''; // Clear the list
 
-
-
         let codesGeneratedToday = [];
-
-
-
         Object.keys(games).forEach(key => {
-
             const game = games[key];
-
             const storageKey = `keys_generated_${game.name}`;
-
             const storedData = JSON.parse(localStorage.getItem(storageKey));
-
-
-
             if (storedData && storedData.keys && storedData.keys.length > 0) {
-
                 codesGeneratedToday = codesGeneratedToday.concat(storedData.keys.map(code => {
-
                     return `<li>${game.name}: ${code}</li>`;
 
                 }));
