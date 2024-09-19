@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     
 
-    const MAX_KEYS_PER_GAME_PER_DAY = 50;
+    const MAX_KEYS_PER_GAME_PER_DAY = 12;
 
     //const EVENTS_DELAY = 20000;
 
@@ -184,7 +184,77 @@ document.addEventListener('DOMContentLoaded', () => {
 
             attemptsNumber: 30,
 
-	}
+	},
+
+	13: {
+
+            name: 'Pin Out Master',
+
+            appToken: 'd2378baf-d617-417a-9d99-d685824335f0',
+
+            promoId: 'd2378baf-d617-417a-9d99-d685824335f0',
+
+            eventsDelay: 20000, // 30 seconds
+
+            attemptsNumber: 30,
+
+        },
+
+        14: {
+
+            name: 'Count Masters',
+
+            appToken: '4bdc17da-2601-449b-948e-f8c7bd376553',
+
+            promoId: '4bdc17da-2601-449b-948e-f8c7bd376553',
+
+            eventsDelay: 20000, // 30 seconds
+
+            attemptsNumber: 30,
+
+	},
+
+	15: {
+
+            name: 'Infected Frontier',
+
+            appToken: 'eb518c4b-e448-4065-9d33-06f3039f0fcb',
+
+            promoId: 'eb518c4b-e448-4065-9d33-06f3039f0fcb',
+
+            eventsDelay: 20000, // 30 seconds
+
+            attemptsNumber: 30,
+
+        },
+
+        16: {
+
+            name: 'Among Water',
+
+            appToken: 'daab8f83-8ea2-4ad0-8dd5-d33363129640',
+
+            promoId: 'daab8f83-8ea2-4ad0-8dd5-d33363129640',
+
+            eventsDelay: 20000, // 30 seconds
+
+            attemptsNumber: 30,
+
+        },
+
+        17: {
+
+            name: 'Factory World',
+
+            appToken: 'd02fc404-8985-4305-87d8-32bd4e66bb16',
+
+            promoId: 'd02fc404-8985-4305-87d8-32bd4e66bb16',
+
+            eventsDelay: 20000, // 30 seconds
+
+            attemptsNumber: 30,
+
+        }
 
 	    
 
@@ -820,13 +890,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
         generatedCodesList.innerHTML = ''; // Clear the list
 
+
+
         let codesGeneratedToday = [];
+
+
+
         Object.keys(games).forEach(key => {
+
             const game = games[key];
+
             const storageKey = `keys_generated_${game.name}`;
+
             const storedData = JSON.parse(localStorage.getItem(storageKey));
+
+
+
             if (storedData && storedData.keys && storedData.keys.length > 0) {
+
                 codesGeneratedToday = codesGeneratedToday.concat(storedData.keys.map(code => {
+
                     return `<li>${game.name}: ${code}</li>`;
 
                 }));
