@@ -29,15 +29,20 @@ body {
     background: var(--container-clr-light);
     background-image: url('https://te.legra.ph/file/36cdbd194b2bb1f80ab5e.jpg');
     background-size: cover;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-position: center;
+    border-radius: 0; /* Remove border-radius to cover full page */
+    box-shadow: none; /* Remove shadow for a clean look */
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    overflow: auto; /* Ensure scroll works if content is long */
     padding: 20px;
-    max-width: 500px;
-    width: 100%;
+    display: flex; /* For vertical centering of content */
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    height: 100vh; /* Full height for the container */
-    overflow: auto; /* Ensure scroll works */
+    box-sizing: border-box; /* Ensure padding doesn’t affect width */
 }
+
 
 h1 {
     margin-bottom: 20px;
